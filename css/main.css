@@ -84,7 +84,7 @@ a {
 }
 
 .owl-theme .owl-controls .owl-page span {
-	background:#fac42b;
+	background:#536DFE;
 }
 
 
@@ -110,18 +110,18 @@ a {
 }
 
 .navbar-custom .navbar-nav > li > a:hover {
-	color:#fac42b;
+	color:#536DFE;
 	background:transparent;
 }
 
 .navbar-custom .navbar-nav > li > a:active,
 .navbar-custom .navbar-nav > li > a:focus {
-	color:#fac42b;
+	color:#536DFE;
 	background:transparent;
 }
 
 .navbar-custom .icon-bar {
-	background:#fac42b;
+	background:#536DFE;
 }
 
 .sticky-wrapper {
@@ -197,7 +197,7 @@ a {
 }
 
 #highlight #right {
-	background:#fac42b;
+	background:#536DFE;
 	min-height:100px;
 }
 
@@ -230,7 +230,7 @@ a {
 }
 
 #info i {
-	color:#fac42b;
+	color:#536DFE;
 	margin-bottom:10px;
 }
 
@@ -246,7 +246,7 @@ a {
 }
 
 #countdown .countdown_amount {
-	color:#666666;
+	color:#FFFFFF;
 	font-family:'montserratregular';
 	font-size:40px;
 	text-align:left;
@@ -255,7 +255,7 @@ a {
 }
 
 #countdown .countdown_section {
-	color:#262626;
+	color:#FFFFFF;
 	font-family:'montserratbold';
 	font-size:13px;
 	text-align:left;
@@ -295,7 +295,7 @@ a {
   	width: 40px;
   	height: 2px;
 	margin:0 auto;
- 	background-color: #fac42b;
+ 	background-color: #536DFE;
  	margin-top: 10px;
   	margin-bottom: 5px;
 }
@@ -403,13 +403,17 @@ a {
 
 #program {
 	color:#ffffff;
-	background:#fac42b;
+	background:#536DFE;
 	padding:70px 0 90px 0;
 }
 
 #program h4 {
 	font-size:17px;
 	letter-spacing:0;
+}
+
+#program .uppercase{
+	color: #1CE9B2;
 }
 
 #program .lead {
@@ -435,7 +439,7 @@ a {
 }
 
 #program .nav-tabs > li.active > a {
-	color: #262626;
+	color: #1CE9B2;
 	padding:10px 50px 10px 0;
 	border-bottom:4px solid #ffffff;
 	padding:10px 100px 10px 0;
@@ -443,7 +447,7 @@ a {
 
 #program .nav-tabs > li > a:hover,
 #program .nav-tabs > li.active > a:hover {
-	color: #262626;
+	color: #1CE9B2;
 }
 
 #program .panel {
@@ -473,7 +477,7 @@ a {
 }
 
 #program .panel-title > a {
-	color: #262626;
+	color: #FFFFFF;
 	text-decoration:none;
 	-webkit-transition: all 0.1s;
 	   -moz-transition: all 0.1s;
@@ -481,11 +485,11 @@ a {
 }
 
 #program .panel-title > a:hover {
-	color: #ffffff;
+	color: #1CE9B2;
 }
 
 #program .date {
-	color:#000;
+	color:#fff;
 	font-family:'montserratregular';
 	margin-bottom:0;
 	font-size:17px;
@@ -500,7 +504,7 @@ a {
 }
 
 #program .panel-body h4 {
-	color:#666666;
+	color:#fff;
 	font-size:21px;
 }
 
@@ -510,7 +514,7 @@ a {
 }
 
 #program .panel-body p span {
-	color:#666666;
+	color: #ffffff;
 	display:inherit;
 }
 
@@ -524,7 +528,7 @@ a {
 }
 
 #program .about-speaker a:hover{
-	color:#000000;
+	color:#1CE9B2;
 	text-decoration:none;
 }
 
@@ -558,7 +562,7 @@ a {
   	display: block;
   	width: 120px;
   	height: 3px;
- 	background-color: #fac42b;
+ 	background-color: #536DFE;
  	margin-top: 12px;
   	margin-bottom: 15px;
 }
@@ -602,7 +606,7 @@ a {
   	display: block;
   	width: 60px;
   	height: 3px;
- 	background-color: #fac42b;
+ 	background-color: #536DFE;
  	margin-top: 12px;
   	margin-bottom: 15px;
 }
@@ -616,7 +620,7 @@ a {
   	display: block;
   	width: 60px;
   	height: 3px;
- 	background-color: #fac42b;
+ 	background-color: #536DFE;
  	margin-top: 12px;
   	margin-bottom: 15px;
 }
@@ -626,7 +630,7 @@ a {
 }
 
 #venue i {
-	color:#fac42b;
+	color:#536DFE;
 }
 
 .venue-inner .lead {
@@ -735,7 +739,7 @@ a {
 
 .price-table {
 	color:#ffffff;
-	background:#fac42b;
+	background:#536DFE;
 	padding:20px;
 	line-height:1;
 	font-weight:300;
@@ -744,7 +748,7 @@ a {
 }
 
 .early-bird {
-	background:#fac42b;
+	background:#536DFE;
 }
 
 .standart {
@@ -827,7 +831,7 @@ a {
 /* TESTIMONIAL */
 
 #testimonial {
-	background:#fac42b;
+	background:#536DFE;
 	background-image: url(../img/bg-testimonial.png);
 	background-repeat: no-repeat;
 	background-attachment:fixed;
@@ -875,7 +879,7 @@ a {
 }
 
 .sponsor {
-	border:2px solid #fac42b;
+	border:2px solid #536DFE;
 	margin:0 5px;
 	padding:10px;
 	text-align:center;
@@ -890,7 +894,7 @@ a {
 } 
 
 #sponsors i {
-	color:#fac42b;
+	color:#536DFE;
 }
 
 
@@ -926,7 +930,7 @@ footer h4:after {
   	display: block;
   	width: 60px;
   	height: 3px;
- 	background-color: #fac42b;
+ 	background-color: #536DFE;
  	margin-top: 12px;
   	margin-bottom: 15px;
 }
@@ -1079,7 +1083,7 @@ textarea {
 /* PRELOAD */
 
 #preload {
-	background:#fac42b;
+	background:#536DFE;
 	position: fixed;
 	top:0;
 	left:0;
@@ -1127,7 +1131,7 @@ textarea {
 /* OWL CAROUSEL */
 
 .owl-theme .owl-controls .owl-buttons div {
-	color: #fac42b;
+	color: #536DFE;
 	margin:0;
 	padding: 1px;
 	font-size: 12px;
