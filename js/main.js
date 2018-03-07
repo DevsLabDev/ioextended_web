@@ -248,6 +248,15 @@ $(window).load(function(){
         theme: "dark-3",
 		live: "on",
       });
+    var config = {
+        apiKey: "AIzaSyB0YAlxdk-EewWTpggzfFDu8zi3rupTpRU",
+        authDomain: "ioextendedgt18.firebaseapp.com",
+        databaseURL: "https://ioextendedgt18.firebaseio.com",
+        projectId: "ioextendedgt18",
+        storageBucket: "ioextendedgt18.appspot.com",
+        messagingSenderId: "685656696459"
+    };
+    firebase.initializeApp(config);
 
 });
 
@@ -314,3 +323,16 @@ var contact_send = function(){
 		}
 	
 	};
+function registro(nodo) {
+    var dato = {};
+    if (nodo === "registro"){
+        dato = {nombre: document.getElementById("nombre").value, correo: document.getElementById("email").value}
+    }else if (nodo === "news") {
+        dato = {correo: document.getElementById("newsletter_email").value}
+    }
+    firebase.database().ref(nodo).push(dato).then(function(value){
+        document.getElementById("nombre").value = null;
+        swal("¡Registrado!", "Te has registrado con el correo " + document.getElementById("email").value , "success");
+        document.getElementById("email").value = null;
+	}).catch(function(error){console.log(error)});
+}

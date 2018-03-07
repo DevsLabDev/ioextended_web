@@ -136,14 +136,14 @@ a {
 
 .is-sticky .navbar-custom {
 	width:100%;
-	background:#262626;
+	background:#FFFFFF;
 	-webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
   	-moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
 	transition: background .5s ease-in-out,padding .5s ease-in-out;
 }
 
 .is-sticky a {
-	color:#ffffff;
+	color:#536DFE;
 }
 
 
@@ -159,7 +159,7 @@ a {
 	left: 0;
 	width: 100%;
 	height: 4px;
-	background: rgba(0,0,0,0.1);
+	background: #1CE9B2;
 	content: '';
 	opacity: 0;
 	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
@@ -186,13 +186,13 @@ a {
 }
 
 #highlight h2 {
-	color:#ffffff;
+	color:#fff;
 	margin-bottom:0;
 }
 
 #highlight #left {
-	color:#b0b0b0;
-	background:#262626;
+	color:#536DFE;
+	background:#1CE9B2;
 	min-height:100px;
 }
 
@@ -665,6 +665,7 @@ a {
 	top:0;
 	right:0;
 	padding:17px 0 0 0;
+	margin-top: 20px;
 }
 
 
@@ -752,11 +753,11 @@ a {
 }
 
 .standart {
-	background:#fcba00;
+	background:#1CE9B280;
 }
 
 .vip {
-	background:#f0b202;
+	background:#1CE9B280;
 }
 
 .price-table .icon {
@@ -1149,7 +1150,7 @@ textarea {
 }
 
 .wrap .overlay:after {
-	background: none repeat scroll 0 0 rgba(250, 196, 43, 0.7);
+	background: none repeat scroll 0 0 #1CE9B280;
 	height: 100%;
 	content:"";
 	display: block;
@@ -1171,7 +1172,7 @@ textarea {
 }
 
 .wrap .overlay:before {
-	background: none repeat scroll 0 0 rgba(250, 196, 43, 0.7);
+	background: none repeat scroll 0 0 #1CE9B280;
 	bottom: -100%; 
 	height: 100%;
 	content:"";
