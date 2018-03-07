@@ -672,7 +672,7 @@ a {
 /* FUNFACTS */
 
 #funfacts  {
-	background-image: url(../img/bg-funfacts.png);
+	background-image: url(../img/bg-funfacts.jpg);
 	background-repeat: no-repeat;
 	background-attachment:fixed;
 	background-position: center;
@@ -833,7 +833,7 @@ a {
 
 #testimonial {
 	background:#536DFE;
-	background-image: url(../img/bg-testimonial.png);
+	background-image: url(../img/bg-testimonial.jpg);
 	background-repeat: no-repeat;
 	background-attachment:fixed;
 	background-position: center;
