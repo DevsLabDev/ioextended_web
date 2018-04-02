@@ -249,12 +249,12 @@ $(window).load(function(){
 		live: "on",
       });
     var config = {
-        apiKey: "AIzaSyB0YAlxdk-EewWTpggzfFDu8zi3rupTpRU",
-        authDomain: "ioextendedgt18.firebaseapp.com",
-        databaseURL: "https://ioextendedgt18.firebaseio.com",
-        projectId: "ioextendedgt18",
-        storageBucket: "ioextendedgt18.appspot.com",
-        messagingSenderId: "685656696459"
+        apiKey: "----------",
+        authDomain: "----------",
+        databaseURL: "----------",
+        projectId: "----------",
+        storageBucket: "----------",
+        messagingSenderId: "----------"
     };
     firebase.initializeApp(config);
 
