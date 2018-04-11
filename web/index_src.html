@@ -10,7 +10,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="Google I/O Extended Guatemala 2018">
-        <meta name="author" content="DevsLabGT">
+        <meta name="author" content="DevsLabGT&FJBatresV">
         <meta http-equiv="Cache-control" content="public">
         
         <!-- viewport settings -->
@@ -1386,9 +1386,9 @@
         </section>
         
         <!-- VENUE -->
-        <section id="venue">
+        <section id="venue" style="padding-bottom: 0px; ">
         
-            <div class="venue">
+            <div class="venue" style="margin-bottom: 0px;">
             	<div class="venue-inner">
                 	<div class="container">
                     	<div class="row">
@@ -1414,7 +1414,7 @@
                 </div>
             </div>
             
-            <div class="container">
+            <!--<div class="container">
                 <div class="row">
                     
                     <div class="col-lg-3 col-md-3">
@@ -1424,7 +1424,7 @@
                     
                     <div class="col-lg-9 col-md-9">
                         
-                        <!-- hotel carousel -->
+                        &lt;!&ndash; hotel carousel &ndash;&gt;
                         <div id="hotel-carousel">
                             <div class="item">
                             	<div class="hotel">
@@ -1439,7 +1439,7 @@
                                           <i class="fa fa-star"></i>
                                         </span>
                                         
-                                        <!--<p class="small"></p>-->
+                                        &lt;!&ndash;<p class="small"></p>&ndash;&gt;
                                         <a target="_blank" class="button button-xsmall button-line-dark" href="https://goo.gl/2FYAok">Detalles</a>
                                     </div>
                                     
@@ -1459,7 +1459,7 @@
                                           <i class="fa fa-star"></i>
                                         </span>
                                         
-                                        <!--<p class="small">Proin nibh augue eget massa vel<br>semper imperdiet integer vitae orci mauris.</p>-->
+                                        &lt;!&ndash;<p class="small">Proin nibh augue eget massa vel<br>semper imperdiet integer vitae orci mauris.</p>&ndash;&gt;
                                         <a target="_blank" class="button button-xsmall button-line-dark" href="https://goo.gl/pdkPpy">Detalles</a>
                                     </div>
                                     
@@ -1479,7 +1479,7 @@
                                           <i class="fa fa-star"></i>
                                         </span>
                                         
-                                        <!--<p class="small">Pellentesque habitant tristique senectus<br>et netus et malesuada fames ac turpis egestas.</p>-->
+                                        &lt;!&ndash;<p class="small">Pellentesque habitant tristique senectus<br>et netus et malesuada fames ac turpis egestas.</p>&ndash;&gt;
                                         <a target="_blank" class="button button-xsmall button-line-dark" href="https://goo.gl/UzAQXh">Detalles</a>
                                     </div>
                                     
@@ -1490,7 +1490,7 @@
                     </div>
                     
                 </div>
-            </div>
+            </div>-->
             
         </section>
         
@@ -1563,9 +1563,48 @@
                         <div class="col-md-6">
                             <input class="form form-control" id="email" placeholder="Email" type="email" />
                         </div>
+                        <div class="col-md-6">
+                            <input class="form form-control" id="telefono" placeholder="Número de teléfono" />
+                        </div>
+                        <div class="col-md-6">
+                            <select class="form-control form" name="tipo" id="tipo">
+                                <option value="individual">Individual</option>
+                                <option value="empresa">Empresa</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <h3>Tus intereses</h3>
+                            <div class="col-md-3">
+                                <input id="desarrollo" type="checkbox" value="desarrollo" >Desarrollo</input>
+                            </div>
+                            <div class="col-md-3">
+                                <input id="marketing" type="checkbox" value="marketing" >Marketing</input>
+                            </div>
+                            <div class="col-md-3">
+                                <input id="gapps" type="checkbox" value="gapps" >Google Apps</input>
+                            </div>
+                            <div class="col-md-3">
+                                <input id="educacion" type="checkbox" value="educacion" >Educación</input>
+                            </div>
+                            <div class="col-md-3">
+                                <input id="nuevos" type="checkbox" value="nuevos" >Nuevos productos</input>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <h3>Días que asistiras</h3>
+                            <div class="col-md-4">
+                                <input id="d8" type="checkbox" value="8">8 de Mayo</input>
+                            </div>
+                            <div class="col-md-4">
+                                <input id="d9" type="checkbox" value="9">9 de Mayo</input>
+                            </div>
+                            <div class="col-md-4">
+                                <input id="d10" type="checkbox" value="10">10 de Mayo</input>
+                            </div>
+                        </div>
                     </div>
                     
-					<div class="col-lg-12 text-center">
+					<div class="col-lg-12 text-center" style="margin-top: 50px;">
                     	<button type="button" class="button button-small button-line-dark" onclick="registro('registro')">Registrar</button>
                     </div>
                     
@@ -1747,29 +1786,25 @@
                         <p class="lead">Este evento no sería posible sin la coolaboración de</p>
                         
                         <div id="sponsors-carousel">
-                            
+
+                            <div class="sponsor">
+                                <img class="img-responsive" src="img/sponsor2.png" alt="Venue">
+                                <span>Locación</span>
+                            </div>
+
                             <div class="sponsor">
                                 <img class="img-responsive" src="img/sponsor1.png" alt="Social networks manager">
                                 <span>Agencia de publicidad</span>
                             </div>
-                            
+
                             <div class="sponsor">
-                                <img class="img-responsive" src="img/sponsor2.png" alt="Venue">
-                                <span>Locación</span>
+                                <img class="img-responsive" src="img/sponsor5.png" alt="Development">
+                                <span>Desarrollo</span>
                             </div>
                             
                             <div class="sponsor">
                                 <img class="img-responsive" src="img/sponsor6.png" alt="Design agency">
                                 <span>Agencia de diseño</span>
-                            </div>
-
-                            <!--<div class="sponsor">
-                                <img class="img-responsive" src="img/sponsor4.png" alt="">
-                            </div>-->
-                            
-                            <div class="sponsor">
-                                <img class="img-responsive" src="img/sponsor5.png" alt="Development">
-                                <span>Desarrollo</span>
                             </div>
                             
                         </div>

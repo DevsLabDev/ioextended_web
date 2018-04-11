@@ -249,12 +249,12 @@ $(window).load(function(){
 		live: "on",
       });
     var config = {
-        apiKey: "----------",
-        authDomain: "----------",
-        databaseURL: "----------",
-        projectId: "----------",
-        storageBucket: "----------",
-        messagingSenderId: "----------"
+        apiKey: "AIzaSyB0YAlxdk-EewWTpggzfFDu8zi3rupTpRU",
+        authDomain: "ioextendedgt18.firebaseapp.com",
+        databaseURL: "https://ioextendedgt18.firebaseio.com",
+        projectId: "ioextendedgt18",
+        storageBucket: "ioextendedgt18.appspot.com",
+        messagingSenderId: "685656696459"
     };
     firebase.initializeApp(config);
 
@@ -325,9 +325,50 @@ var contact_send = function(){
 	};
 function registro(nodo) {
     var dato = {};
+    var validInteres = false;
+    var validDias = false;
     if (nodo === "registro"){
-        dato = {nombre: document.getElementById("nombre").value, correo: document.getElementById("email").value}
+    	var intereses = {
+            desarrollo: document.getElementById("desarrollo").checked,
+            marketing: document.getElementById("marketing").checked,
+            gapps: document.getElementById("gapps").checked,
+            educacion: document.getElementById("educacion").checked,
+            nuevos: document.getElementById("nuevos").checked
+        };
+    	for(var key in intereses){
+    		if(intereses[key]){
+    			validInteres = true;
+			}
+		}
+		if (!validInteres) {
+            swal("Hubo un problema", "Debes seleccionar al menos uno de los intereses", "warning");
+            return;
+		}
+		var dias = {
+    		d8: document.getElementById("d8").checked,
+            d9: document.getElementById("d9").checked,
+            d10: document.getElementById("d10").checked
+		}
+		for (var key in dias) {
+    		if (dias[key]){
+    			validDias = true;
+			}
+		}
+		if (!validDias){
+            swal("Hubo un problema", "Debes seleccionar al menos uno de los días para asistir", "warning");
+            return;
+		}
+        dato = {nombre: document.getElementById("nombre").value, correo: document.getElementById("email").value,
+		telefono: document.getElementById("telefono").value, tipo: document.getElementById("tipo").value,
+			intereses: intereses, dias: dias};
+    	if (!dato['nombre'] || !dato['correo'] || !dato['telefono'] || !dato['tipo']) {
+            swal("Hubo un problema", "Todos los campos son obligatorios", "warning");
+            return;
+		}
+		console.log(dato);
     }else if (nodo === "news") {
+    	validDias = true;
+    	validInteres = true;
         dato = {correo: document.getElementById("newsletter_email").value}
     }
     firebase.database().ref(nodo).push(dato).then(function(value){

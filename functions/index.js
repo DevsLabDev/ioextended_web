@@ -1,5 +1,6 @@
 const functions = require('firebase-functions');
-const admi = require('firebase-admin');
+const admin = require('firebase-admin');
+admin.initializeApp(functions.config().firebase);
 const nodemailer = require('nodemailer');
 const mailTransport = nodemailer.createTransport({
   service: 'gmail',
@@ -14,6 +15,37 @@ exports.sendWelcomeEmail = functions.database.ref('registro/{assistant}').onCrea
 	var registro = event.data.val();
   return sendWelcomeEmail(registro.correo, registro.nombre);
 });
+
+exports.sendProblemEmail = functions.https.onRequest((req, res) => {
+  admin.database().ref('registro').once('value').then((snapshot) => {
+    snapshot.forEach((child)=>{
+      if (!child.val()['intereses']) {
+        console.log(child.val()['correo'], child.val());
+        const mailOptions = {
+          from: `${APP_NAME} <info@devslabgt.com>`,
+          to: child.val()['correo'],
+          subject: 'Hemos realizado un cambio y necesitamos tu apoyo',
+          text: 'Hola ' + child.val()['nombre'] + ' Hemos realizado un cambio en los datos de registro y necesitamos que vuelvas a realizarlo.' 
+          + 'De está manera estaremos en contacto y podremos hacerte saber toda la información del evento. '
+          + 'Para registrarte ingresa a https://ioextendedgt.tecnoagenda.com .'
+        };
+        mailTransport.sendMail(mailOptions).then(() => {
+            console.log('Nuevo correro de problem enviado a:', child.val()['correo']);
+            admin.database().ref('registro/' + child.key).remove();
+            return null;
+        }).catch((ex)=>{
+          console.log(ex);
+        });
+      }
+    });
+    return null;
+  }).catch((ex)=>{
+    console.log(ex);
+    return null;
+  });
+   return res;
+});
+
 // [END sendRegisterEmail]
 function sendWelcomeEmail(email, displayName) {
   const mailOptions = {
