@@ -220,6 +220,42 @@ jQuery(document).ready(function($) {
 		  navigation : true,
 		  navigationText : ['<i class="pe-4x pe-7s-angle-left pe-border"></i>','<i class="pe-4x  pe-7s-angle-right pe-border"></i>'],
 	  });
+    var owl1 = $("#sponsors-carousel1");
+
+    owl1.owlCarousel({
+
+        autoPlay: false,
+        itemsCustom : [
+            [0, 1],
+            [450, 1],
+            [600, 3],
+            [700, 3],
+            [1000, 3],
+            [1200, 5],
+            [1600, 5]
+        ],
+        pagination : false,
+        navigation : true,
+        navigationText : ['<i class="pe-4x pe-7s-angle-left pe-border"></i>','<i class="pe-4x  pe-7s-angle-right pe-border"></i>'],
+    });
+    var owl2 = $("#sponsors-carousel2");
+
+    owl2.owlCarousel({
+
+        autoPlay: false,
+        itemsCustom : [
+            [0, 1],
+            [450, 1],
+            [600, 3],
+            [700, 3],
+            [1000, 3],
+            [1200, 5],
+            [1600, 5]
+        ],
+        pagination : false,
+        navigation : true,
+        navigationText : ['<i class="pe-4x pe-7s-angle-left pe-border"></i>','<i class="pe-4x  pe-7s-angle-right pe-border"></i>'],
+    });
 	
 	// FUNFACTS
 	 $('.number').counterUp({
