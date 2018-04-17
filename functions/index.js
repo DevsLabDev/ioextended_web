@@ -11,8 +11,8 @@ const mailTransport = nodemailer.createTransport({
 });
 const APP_NAME = 'I/O Extended Guatemala 2018';
 // [START sendRegisterEmail]
-exports.sendWelcomeEmail = functions.database.ref('registro/{assistant}').onCreate((event) => {
-	var registro = event.data.val();
+exports.sendWelcomeEmail = functions.database.ref('registro/{assistant}').onCreate((snap, context) => {
+	var registro = snap.val();
   return sendWelcomeEmail(registro.correo, registro.nombre);
 });
 
