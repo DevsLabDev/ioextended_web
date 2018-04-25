@@ -5,4 +5,4 @@
 <p>Para ejecutar el sitio web solamente es necesario abrir el index.html en tu navegador y listo. Es mejor si utilizas el comando <b>firebase serve --only hosting</b> utilizando firebase-tools.</p>
 
 <h2>Publicación</h2>
-<p>Se encuentra publicado en <a href="ioextendedgt.devslabgt.com">ioextendedgt.devslabgt.com</a> mediante el uso de <i>Firebase Hosting</i>.</p>
+<p>Se encuentra publicado en <a href="ioextendedgt.tecnoagenda.com">ioextendedgt.tecnoagenda.com</a> mediante el uso de <i>Firebase Hosting</i>.</p>
