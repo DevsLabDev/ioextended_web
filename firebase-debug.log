@@ -1,0 +1,32 @@
+[debug] [2018-04-25T18:05:23.329Z] ----------------------------------------------------------------------
+[debug] [2018-04-25T18:05:23.331Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\javie\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only hosting
+[debug] [2018-04-25T18:05:23.331Z] CLI Version:   3.18.2
+[debug] [2018-04-25T18:05:23.331Z] Platform:      win32
+[debug] [2018-04-25T18:05:23.331Z] Node Version:  v8.9.3
+[debug] [2018-04-25T18:05:23.331Z] Time:          Wed Apr 25 2018 12:05:23 GMT-0600 (Central America Standard Time)
+[debug] [2018-04-25T18:05:23.331Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-25T18:05:23.344Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-25T18:05:23.345Z] > authorizing via signed-in user
+[debug] [2018-04-25T18:05:23.348Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/ioextendedgt18  
+  
+ Wed Apr 25 2018 12:05:23 GMT-0600 (Central America Standard Time)
+[debug] [2018-04-25T18:05:26.229Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-25T18:05:26.229Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/ioextendedgt18/tokens  
+  
+ Wed Apr 25 2018 12:05:26 GMT-0600 (Central America Standard Time)
+[debug] [2018-04-25T18:05:28.048Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-25T18:05:28.049Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/ioextendedgt18  
+  
+ Wed Apr 25 2018 12:05:28 GMT-0600 (Central America Standard Time)
+[debug] [2018-04-25T18:05:30.323Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\Documentos\DevsLabGT\IOExtended2018\web'...
+[info] 
+[debug] [2018-04-25T18:05:30.331Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/685656696459/clients/_:getWebAppConfig  
+  
+ Wed Apr 25 2018 12:05:30 GMT-0600 (Central America Standard Time)
+[debug] [2018-04-25T18:05:32.521Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: web
+[info] +  hosting: Local server: http://localhost:5000
+
