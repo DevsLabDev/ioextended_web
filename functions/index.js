@@ -16,6 +16,28 @@ exports.sendWelcomeEmail = functions.database.ref('registro/{assistant}').onCrea
   return sendWelcomeEmail(registro.correo, registro.nombre);
 });
 
+exports.generateCsv = functions.https.onRequest((req, res) => {
+  admin.database().ref('registro').once('value').then((snapshot) => {
+    var csv = '';
+    var jsontmp = [];
+    var json = {};
+    snapshot.forEach((child)=>{
+      json = child.toJSON();
+      jsontmp.push({
+        nombre: json.nombre, correo: json.correo, telefono: json.telefono, tipo: json.tipo, 
+        8: json.dias.d8, 9: json.dias.d9, 10: json.dias.d10,  
+        desarrollo: json.intereses.desarrollo, educacion: json.intereses.educacion, gapps: json.intereses.gapps, 
+        marketing: json.intereses.marketing, nuevos: json.intereses.nuevos
+      });
+      csv = JSON.stringify(jsontmp);
+    });
+    return res.send(csv);
+  }).catch((ex) => {
+    console.log(ex);
+    return null;
+  });
+});
+
 exports.sendProblemEmail = functions.https.onRequest((req, res) => {
   admin.database().ref('registro').once('value').then((snapshot) => {
     snapshot.forEach((child)=>{
