@@ -38,6 +38,14 @@ exports.generateCsv = functions.https.onRequest((req, res) => {
   });
 });
 
+exports.sendEventWelcomMail = functions.database.ref('registro/{assistant}').onUpdate((snap, context)=>{
+  var registro = snap.after.val();
+  if(registro.llego){
+    return sendWelcomEventMail(registro.correo, registro.nombre);
+  }
+  return null;
+});
+
 exports.sendProblemEmail = functions.https.onRequest((req, res) => {
   admin.database().ref('registro').once('value').then((snapshot) => {
     snapshot.forEach((child)=>{
@@ -80,5 +88,20 @@ function sendWelcomeEmail(email, displayName) {
   mailOptions.text = `¡Hola ${displayName || ''}! Bienvenido al ${APP_NAME}. Esperamos verte todos los días del evento.`;
   return mailTransport.sendMail(mailOptions).then(() => {
     return console.log('Nuevo correro de registro enviado a:', email);
+  });
+}
+
+function sendWelcomEventMail(email, displayName) {
+  const mailOptions = {
+    from: `${APP_NAME} <noreply@devslabgt.com>`,
+    to: email,
+  };
+
+  // The user subscribed to the newsletter.
+  mailOptions.subject = `¡Bienvenido al  ${APP_NAME}!`;
+  mailOptions.text = '¡Hola ' + displayName + '! Que alegre es verte llegar a este mega evento de Google en Guatemala. Esperamos que lo disfrutes mucho. ' 
+  + 'Si aún no sabes que temas ver puedes pasarte por el sitio web del evento y revisar el programa. https://ioextendedgt.tecnoagenda.com';
+  return mailTransport.sendMail(mailOptions).then(() => {
+    return console.log('Correo de llegada enviado a:', email);
   });
 }
