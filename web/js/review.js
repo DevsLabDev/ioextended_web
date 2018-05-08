@@ -8,6 +8,7 @@ var config = {
     messagingSenderId: "685656696459"
 };
 firebase.initializeApp(config);
+var adentro = 0;
 firebase.auth().signInAnonymously().catch(function (error) { console.log(error) });
 function ingreso(key) {
     firebase.database().ref('registro/' + key).once("value").then((snapshot) => {
@@ -26,7 +27,9 @@ function get() {
             var key = snap.key;
             var accion = "<td class='action'><button onClick='ingreso(" + '"' + key + '"' + ")' class='btn btn-success' >Ingreso</button></td>";
             if (val.llego) {
+                adentro = adentro + 1;
                 accion = "<td>Ya ingreso</td>";
+                $('#numero').html(adentro);
             }
             $('#data').append("<tr id=" + key + ">" +
                 "<td>" + val.nombre + "</td>" +
@@ -44,11 +47,13 @@ function listen() {
     var registro = firebase.database().ref('registro');
     registro.on('child_added', (snap) => {
         var exist = document.getElementById(snap.key);
-        console.log(exist);
+        //console.log(exist);
         if (!exist || exist == null) {
             var val = snap.val();
             var accion = "<td class='action'><button onClick='ingreso(" + '"' + snap.key + '"' + ")' class='btn btn-success' >Ingreso</button></td>";
             if (val.llego) {
+                adentro = adentro + 1;
+                $('#numero').html(adentro);
                 accion = "<td>Ya ingreso</td>";
             }
             $("#data #" + snap.key).html("<td>" + val.nombre + "</td>" +
@@ -62,6 +67,8 @@ function listen() {
         var val = snap.val();
         var accion = "<td class='action'><button onClick='ingreso(" + '"' + snap.key + '"' + ")' class='btn btn-success' >Ingreso</button></td>";
         if (val.llego) {
+            adentro = adentro + 1;
+            $('#numero').html(adentro);
             accion = "<td>Ya ingreso</td>";
         }
         $("#data #" + snap.key).html("<td>" + val.nombre + "</td>" +
