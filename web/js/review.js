@@ -13,8 +13,11 @@ firebase.auth().signInAnonymously().catch(function (error) { console.log(error) 
 function ingreso(key) {
     firebase.database().ref('registro/' + key).once("value").then((snapshot) => {
         var val = snapshot.val();
-        val.llego = true;
-        val.llegada = new Date().getTime();
+        if (!val.llego) {
+            val.llego = true;
+        }
+        val.llego10 = true;
+        val.llegada10 = new Date().getTime();
         firebase.database().ref('registro/' + key).set(val);
     });
 }
@@ -26,7 +29,7 @@ function get() {
             var val = snap.val();
             var key = snap.key;
             var accion = "<td class='action'><button onClick='ingreso(" + '"' + key + '"' + ")' class='btn btn-success' >Ingreso</button></td>";
-            if (val.llego) {
+            if (val.llego10) {
                 adentro = adentro + 1;
                 accion = "<td>Ya ingreso</td>";
                 $('#numero').html(adentro);
@@ -45,28 +48,13 @@ function get() {
 }
 function listen() {
     var registro = firebase.database().ref('registro');
-    registro.on('child_added', (snap) => {
-        var exist = document.getElementById(snap.key);
-        //console.log(exist);
-        if (!exist || exist == null) {
-            var val = snap.val();
-            var accion = "<td class='action'><button onClick='ingreso(" + '"' + snap.key + '"' + ")' class='btn btn-success' >Ingreso</button></td>";
-            if (val.llego) {
-                adentro = adentro + 1;
-                $('#numero').html(adentro);
-                accion = "<td>Ya ingreso</td>";
-            }
-            $("#data #" + snap.key).html("<td>" + val.nombre + "</td>" +
-                "<td>" + val.correo + "</td>" +
-                "<td>" + val.telefono + "</td>" +
-                "<td>" + val.tipo + "</td>" +
-                accion);
-        }
-    });
     registro.on('child_changed', (snap) => {
         var val = snap.val();
+        console.log(snap.key);
+        var exist = document.getElementById(snap.key);
         var accion = "<td class='action'><button onClick='ingreso(" + '"' + snap.key + '"' + ")' class='btn btn-success' >Ingreso</button></td>";
-        if (val.llego) {
+        if (val.llego10) {
+            console.log('changed');
             adentro = adentro + 1;
             $('#numero').html(adentro);
             accion = "<td>Ya ingreso</td>";
