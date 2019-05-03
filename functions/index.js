@@ -16,6 +16,11 @@ exports.sendWelcomeEmail = functions.database.ref('2019/registro/{assistant}').o
   return sendWelcomeEmail(registro.correo, registro.nombre);
 });
 
+exports.sendWelcomeEmail = functions.database.ref('2019/message/{assistant}').onCreate((snap, context) => {
+  var registro = snap.val();
+  return sendQuestion(registro.correo, registro.nombre, registro.tema, registro.mensaje);
+});
+
 exports.generateCsv = functions.https.onRequest((req, res) => {
   admin.database().ref('2019/registro').once('value').then((snapshot) => {
     var csv = '';
@@ -105,6 +110,21 @@ function sendWelcomeEmail(email, displayName) {
   });
 }
 
+function sendQuestion(email, displayName, tema, mensaje) {
+  const mailOptions = {
+    from: `I/O Extended Guatemala 2019 <noreply@devslabgt.com>`,
+    replyTo: `${displayName}, <${email}>`,
+    to: 'info@devslabgt.com',
+  };
+
+  // The user subscribed to the newsletter.
+  mailOptions.subject = tema;
+  mailOptions.text = mensaje;
+  return mailTransport.sendMail(mailOptions).then(() => {
+    return console.log('Nuevo correro de registro enviado a:', email);
+  });
+}
+
 function sendWelcomEventMail(email, displayName) {
   const mailOptions = {
     from: `I/O Extended Guatemala 2019 <noreply@devslabgt.com>`,
@@ -112,7 +132,7 @@ function sendWelcomEventMail(email, displayName) {
   };
 
   // The user subscribed to the newsletter.
-  mailOptions.subject = `¡Bienvenido al  ${APP_NAME}!`;
+  mailOptions.subject = `¡Bienvenido al  I/O Extended Guatemala 2019!`;
   mailOptions.text = '¡Hola ' + displayName + '! Que alegre es verte llegar a este mega evento de Google en Guatemala. Esperamos que lo disfrutes mucho. '
     + 'Si aún no sabes que temas ver puedes pasarte por el sitio web del evento y revisar el programa. https://ioextendedgt.tecnoagenda.com';
   return mailTransport.sendMail(mailOptions).then(() => {
